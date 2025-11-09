@@ -1,6 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 var id = params.get("id") || "UCX6OQ3DkcsbYNE6H8uQQuVA";
-var url = `https://subscribercount.app/api/get?platform=youtube&type=channel&id=`;
+var url = `https://backend.mixerno.space/api/youtube/estv3/`; 
 
 const chart = new Highcharts.chart({
 	chart: {
@@ -129,12 +129,12 @@ function getdata(a) {
 	fetch(url + a)
 		.then((res) => res.json())
 		.then((data) => {
-document.getElementById('c').innerHTML = data.estSubCount;	
-      document.getElementById("avatar").src = data.snippet.thumbnails.high.url;
-			document.getElementById("title").textContent = data.snippet.title;
+document.getElementById('c').innerHTML = data.items[0].statistics.viewCount;	
+			document.getElementById("avatar").src = data.items[0].snippet.thumbnails.default.url;
+			document.getElementById("title").textContent = data.items[0].snippet.title;
 			if (chart.series[0].points.length >= 3600)
 				chart.series[0].data[0].remove();
-			chart.series[0].addPoint([Date.now(), data.estSubCount]);
+			chart.series[0].addPoint([Date.now(), data.items[0].statistics.viewCount]);
 		});
 }
 
@@ -153,7 +153,8 @@ function search() {
 	const prompt = window.prompt("Enter channel name, ID, or URL.");
 	if (prompt)
 		fetch(
-			`https://axern.space/api/search?platform=youtube&type=channel&query=${prompt}`
+			`https://mixerno.space/api/youtube-channel-counter/search/${id}`
+			 
 		)
 			.then((res) => res.json())
 			.then((data) => {
