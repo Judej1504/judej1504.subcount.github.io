@@ -10,12 +10,13 @@ html {
   --header-background: black;
   --text-primary: white;
   --text-secondary: #aaa;
-  --font-size: 178px;
+  --font-size: 59px;
   --digit-width: 38px;
   --non-digit-width: 12px;
   --digit-height: 74px;
   --line-height: 100%;
   --font-weight: 700;
+  background-color: black
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -33,7 +34,7 @@ html {
 #odo8a,
 #odo9a,
 #c     {
-  font-family: "Arial";
+  font-family: "Roboto Black";
   font-size: var(--font-size);
   display: block;
   /*width: var(--digit-width);*/
@@ -71,21 +72,21 @@ html {
   position: absolute;
   top: 0px;
   left: 0%;
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
 }
 
 #title {
   position: absolute;
   width: 100%;
   height: 19px;
-  left: 333px;
-  top: 30px;
+  left: 110px;
+  top: 1px;
   text-align: left;
-  font-family: "YouTube Sans Dark", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
-  font-size: 60px;
+  font-size: 20px;
   line-height: 24px;
   z-index: 100;
   color: white;
@@ -99,9 +100,9 @@ html {
 
 #count {
   position: absolute;
-  top: 79px;
-  left: 321px;
-  text-align: left;
+  top: 23px;
+  left: 110px;
+  text-align: right;
   margin-right: 0;
   font-family: Roboto Black;
   font-weight 600;
